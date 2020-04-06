@@ -1,18 +1,1 @@
-[
-  {
-    "question": "Hello (formal)",
-    "answer": "Здравствуйте"
-  },
-  {
-    "question": "Goodbye (formal)",
-    "answer": "До свидания"
-  },
-  {
-    "question": "Hello (informal)",
-    "answer": "Привет"
-  },
-  {
-    "question": "Goodbye (informal)",
-    "answer": "Пока"
-  }
-]
+[{"question": "Goodbye (informal)", "answer": "\u041f\u043e\u043a\u0430"}]

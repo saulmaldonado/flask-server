@@ -1,6 +1,6 @@
 from flask import Flask, render_template, abort, jsonify, request, redirect, url_for
 
-from model import db
+from model import db, save_db
 
 app = Flask(__name__)
 
@@ -40,8 +40,21 @@ def add_card():
     if request.method == 'POST':
         card = {'question' : request.form['question'], 'answer': request.form['answer']}
         db.append(card)
+        save_db()
 
         return redirect(url_for('card_view', index=len(db)-1))
     else:
         return render_template('add_card.html')
     
+@app.route('/remove_card/<int:index>', methods=['GET', 'POST'])
+def remove_card(index):
+    try:
+        if request.method == 'POST':
+            db.pop(index)
+            save_db()
+            return redirect(url_for('welcome'))
+        else:  
+            card = db[index]
+            return render_template('remove_card.html', card=card)
+    except IndexError:
+        abort(404)
