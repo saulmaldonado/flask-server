@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Card</title>
-</head>
-<body>
+{% extends "base.html"%}
+
+{% block title %} Add Card {% endblock %}
+
+{%block content%}
     <h1>Add a new card</h1>
     <form method="POST">
         <p>
@@ -18,5 +15,4 @@
         </p>
         <button type='submit'>Create</button>
     </form>
-</body>
-</html>
+{%endblock%}
